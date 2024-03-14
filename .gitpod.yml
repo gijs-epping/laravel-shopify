@@ -1,6 +1,9 @@
+image:
+  file: .gitpod.Dockerfile
 tasks:
+  - name: Build database
+    init: mysql -u root -e "create database laravel"
   - name: Setup environment and PHP/Composer dependencies
-    openMode: split-left
     # Fix because of https://github.com/gitpod-io/gitpod/issues/16614
     #before: sudo curl -o /usr/local/bin/docker-compose -fsSL https://github.com/docker/compose/releases/download/v2.16.0/docker-compose-linux-$(uname -m)
     init: |
